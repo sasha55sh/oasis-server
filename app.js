@@ -2,7 +2,7 @@ require("express-async-errors");
 const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-const router = require("./routes/router");
+const router = require("./routes/routes");
 const dbContext = require("./generic/database/dbContext");
 const config = require("./config/config");
 const logger = require("./logger");
