@@ -1,20 +1,15 @@
 const express = require("express");
 const router = express.Router();
 
-<<<<<<< Updated upstream
-=======
 const MenuController = require("../controllers/MenuController");
 const FaqController = require("../controllers/FaqController");
 const ProductController = require("../controllers/ProductController");
 const ProductService = require("../services/ProductService");
 
->>>>>>> Stashed changes
 router.get("/", (req, res) => {
   res.send("Виберіть маршрут");
 });
 
-<<<<<<< Updated upstream
-=======
 router.get("/menu", MenuController.getMenu);
 router.get("/faq", FaqController.getFaq);
 
@@ -24,5 +19,4 @@ router.get("/shop", ProductController.getFilteredProducts);
 router.get("/shop", ProductController.getProductByTitle);
 router.get("/shop/:handle", ProductController.getProductByHandle);
 
->>>>>>> Stashed changes
 module.exports = router;
