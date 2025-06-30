@@ -1,11 +1,11 @@
 const { Schema, model } = require("mongoose");
 
 const menuSchema = new Schema({
-  _id: { type: String },
+  id: { type: String },
   title: { type: String },
   description: { type: String },
   cal: { type: Number },
-  category: { type: String , required: true},
+  category: { type: String, required: true },
   price: { type: Number },
 });
 
