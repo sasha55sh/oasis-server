@@ -14,6 +14,7 @@ const productSchema = new Schema(
     price: { type: Number },
     proteins: { type: Number },
     title: { type: String },
+    discount: { type: Number },
   },
   { timestamps: true }
 );
