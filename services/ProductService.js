@@ -6,32 +6,34 @@ class ProductService {
   }
 
   async getProductByHandle(handle) {
-    return handle ? await Product.findOne({ handle }) : await Product.find();
-  }
-
-  async getProductByTitle(title) {
-    return title ? await Product.find({ title }) : await Product.find();
+    return await Product.findOne({ handle });
   }
 
   async getProductsByCategory(category) {
-    return category ? await Product.find({ category }) : await Product.find();
+    return await Product.find({ category });
   }
 
-  async getFilteredProducts(sort) {
-    let sortOptions = {};
+  async searchProducts(query) {
+    const regex = new RegExp(query, "i");
+    return await Product.find({
+      $or: [{ title: regex }, { description: regex }],
+    });
+  }
 
+  async getSortedProducts(sort) {
+    let sortOption = {};
     switch (sort) {
-      case "HPRICE":
-        sortOptions.price = -1;
+      case "hprice":
+        sortOption.price = -1;
         break;
-      case "LPRICE":
-        sortOptions.price = 1;
+      case "lprice":
+        sortOption.price = 1;
         break;
-      case "NEW":
-        sortOptions.createdAt = -1;
+      case "new":
+        sortOption.createdAt = -1;
         break;
     }
-    return await Product.find().sort(sortOptions);
+    return await Product.find().sort(sortOption);
   }
 }
 

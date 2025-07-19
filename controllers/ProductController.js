@@ -13,21 +13,21 @@ class ProductController {
     return res.status(200).json(product);
   }
 
-  async getProductByTitle(req, res) {
-    const { title } = req.query;
-    const product = await ProductService.getProductByTitle(title);
+  async getProductsByCategory(req, res) {
+    const { category } = req.params;
+    const product = await ProductService.getProductsByCategory(category);
     return res.status(200).json(product);
   }
 
-  async getProductsByCategory(req, res) {
-    const { category } = req.query;
-    const product = await ProductService.getProductsByCategory(category);
-    res.status(200).json(product);
+  async searchProducts(req, res) {
+    const { value } = req.query;
+    const product = await ProductService.searchProducts(value);
+    return res.status(200).json(product);
   }
 
-  async getFilteredProducts(req, res) {
+  async getSortedProducts(req, res) {
     const { sort } = req.query;
-    const product = await ProductService.getFilteredProducts(sort);
+    const product = await ProductService.getSortedProducts(sort);
     res.status(200).json(product);
   }
 }
