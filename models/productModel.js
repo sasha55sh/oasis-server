@@ -15,6 +15,7 @@ const productSchema = new Schema(
     proteins: { type: Number },
     title: { type: String },
     discount: { type: Number },
+    quantity: { type: Number },
   },
   { timestamps: true }
 );
