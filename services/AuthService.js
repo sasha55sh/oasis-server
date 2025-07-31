@@ -3,7 +3,7 @@ const User = require("../models/userModel");
 const jwt = require("jsonwebtoken");
 
 class AuthService {
-  async verifyCodeService(idToken) {
+  async verifyCode(idToken) {
     const decoded = await admin.auth().verifyIdToken(idToken);
     const { uid, phone_number } = decoded;
 
