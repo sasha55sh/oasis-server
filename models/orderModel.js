@@ -2,6 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const orderSchema = new Schema(
   {
+    uid: {type: String, required: false}, 
     orderId: { type: String, required: true },
     firstName: { type: String, required: true },
     phone: { type: String, required: true },
@@ -22,6 +23,7 @@ const orderSchema = new Schema(
         grams: { type: Number, required: true },
         price: { type: Number, required: true },
         quantity: { type: Number, required: true },
+        handle: {type: String, required: true}
       },
     ],
   },
