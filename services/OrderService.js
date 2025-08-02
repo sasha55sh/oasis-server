@@ -6,8 +6,8 @@ class OrderService {
     return await order.save();
   }
 
-  async getOrderById(id) {
-    return await Order.findById(id);
+  async getOrdersByUid(uid) {
+    return await Order.find({ uid }).sort({ createdAt: -1 });
   }
 }
 
