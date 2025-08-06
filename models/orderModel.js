@@ -13,7 +13,7 @@ const orderSchema = new Schema(
     flat: { type: String },
     house: { type: String },
     comments: { type: String },
-    cutleryQuantity: { type: String, required: true },
+    cutleryQuantity: { type: String, required: false },
     totalAmount: { type: Number, required: true },
     products: [
       {
