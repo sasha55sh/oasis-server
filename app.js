@@ -26,7 +26,6 @@ app.use(
     credentials: true,
     origin: [
       "http://localhost:3000",
-      "https://oasis-restaurant.up.railway.app",
       "https://oasis-restaurant.vercel.app",
     ],
   })
