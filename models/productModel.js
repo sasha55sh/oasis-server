@@ -5,7 +5,7 @@ const productSchema = new Schema(
     id: { type: String },
     cal: { type: Number },
     carbohydrates: { type: Number },
-    description: { type: String },
+    description: { type: Array },
     category: { type: String },
     fats: { type: Number },
     grams: { type: Number },
