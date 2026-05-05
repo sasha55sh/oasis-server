@@ -15,7 +15,7 @@ const userSchema = new Schema(
         image: String,
         grams: Number,
         discount: { type: Number, default: 0 },
-        description: String,
+        description: Array,
       },
     ],
     street: { type: String, default: "" },

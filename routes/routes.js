@@ -8,6 +8,7 @@ const OrderController = require("../controllers/OrderController");
 const NewsController = require("../controllers/NewsController");
 const AuthController = require("../controllers/AuthController");
 const UserController = require("../controllers/UserController");
+const NutritionProgramController = require("../controllers/NutritionProgramController");
 const AuthMiddleware = require("../middlewares/AuthMiddleware");
 
 router.get("/", (req, res) => {
@@ -23,6 +24,7 @@ router.get("/search", ProductController.searchProducts);
 router.get("/sort", ProductController.getSortedProducts);
 router.get("/news", NewsController.getNews);
 router.get("/news/:handle", NewsController.getNewsByHandle);
+router.get("/nutrition-programs", NutritionProgramController.getAllNutritionPrograms);
 router.get("/account", AuthMiddleware.requireAuth, UserController.getUser);
 router.get("/favorites", AuthMiddleware.requireAuth, UserController.getFavorites);
 router.get("/account/orders", AuthMiddleware.requireAuth, OrderController.getOrders);
@@ -30,6 +32,7 @@ router.get("/account/orders", AuthMiddleware.requireAuth, OrderController.getOrd
 router.post("/favorites", AuthMiddleware.requireAuth, UserController.toggleFavorite);
 router.post("/order", AuthMiddleware.optionalAuth, OrderController.createOrder);
 router.post("/verify-code", AuthController.verifyCode);
+router.post("/nutrition-programs", AuthMiddleware.optionalAuth, NutritionProgramController.createProgramRequest)
 
 router.patch("/account", AuthMiddleware.requireAuth, UserController.updateProfile);
 
