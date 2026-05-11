@@ -20,6 +20,9 @@ const nutritionProgramRequestSchema = new Schema({
         totalPrice: { type: Number }
     },
     comments: { type: String },
-})
+    status: {
+        type: String, enum: ["активне", "неактивне"]
+    }
+}, { timestamps: { createdAt: true } })
 
 module.exports = model("NutritionRequest", nutritionProgramRequestSchema, "nutrition-request")
